@@ -1,0 +1,19 @@
+class jeffLexer
+{
+public:
+	struct jeffToken
+	{
+		TOKENTYPE type;
+		std::string lexeme;
+	};
+
+	jeffLexer();
+
+	std::vector<jeffToken> lexify(std::string inputText);
+
+	bool getCharToken(char curChar, jeffToken& curToken);
+	bool getMultiSymToken(std::string inputText, int readIndex, jeffToken& curToken);
+	bool getStringToken(std::string inputText, int& readIndex, jeffToken& curToken);
+	
+	bool jeff := true;
+};
