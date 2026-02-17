@@ -67,11 +67,11 @@ bool jeffLexer::getMultiSymToken(std::string inputText, int& readIndex, jeffLexe
 bool jeffLexer::handleCharStringLiteral(std::string inputText, int& readIndex, jeffLexer::jeffToken& curToken)
 {
 	// TODO: handle error if unclosed quote
-	if (inputText[readIndex] == '\'')
+	if (inputText[readIndex] == multicharDictionary[CHARMARK])
 	{
 		readIndex++;
 		curToken.type = CHARLITERAL;
-		for (; inputText[readIndex] != '\''; readIndex++)
+		for (; inputText[readIndex] != multicharDictionary[CHARMARK]; readIndex++)
 		{
 			curToken.lexeme.push_back(inputText[readIndex]);
 		}
@@ -143,16 +143,14 @@ bool jeffLexer::handleNumberLiteral(std::string inputText, int& readIndex, jeffL
 	if (std::isdigit(inputText[readIndex]))
 	{
 		// supports hexadecimal, octal, and binary
-		for (; std::isdigit(inputText[readIndex]) || inputText[readIndex] == '.' || inputText[readIndex] == 'f' || inputText[readIndex] == 'd' || inputText[readIndex] == 'x' || inputText[readIndex] == 'b'; readIndex++)
+		for (; std::isdigit(inputText[readIndex]) || inputText[readIndex] == '.' || inputText[readIndex] == FLOATMARK || inputText[readIndex] == 'x' || inputText[readIndex] == 'b'; readIndex++)
 		{
 			stringToken.push_back(inputText[readIndex]);
 		}
 		readIndex--;
 
-		if (stringToken.find('f') != std::string::npos)
+		if (stringToken.find(FLOATMARK) != std::string::npos)
 			curToken.type = FLOATLITERAL;
-		else if (stringToken.find('d') != std::string::npos)
-			curToken.type = DOUBLELITERAL;
 		else if (stringToken.find('.') == std::string::npos)
 			curToken.type = INTLITERAL;
 		curToken.lexeme = stringToken;

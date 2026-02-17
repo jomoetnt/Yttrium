@@ -41,7 +41,7 @@ public:
 		std::vector<jeffSymbol> rightSide;
 	};
 
-	// list of rules (JSON?)
+	// list of rules ()
 	//std::vector<jeffRule> grammar =
 	//{
 	//	// statements

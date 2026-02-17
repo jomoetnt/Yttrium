@@ -1,0 +1,19 @@
+` test comment
+
+``
+other test comment
+``
+
+
+
+bool jeff := ~true#` yet another test comment
+uint16 jeff2 := 14#``
+more test comments
+``float32 jeff3 := 14.3f#
+float64 jeff5#
+float64 jeff4 := 26.8d#
+
+if ~jeff
+{
+	jeff5 := jeff4^2++#
+}

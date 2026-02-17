@@ -2,6 +2,8 @@
 
 #include <string>
 
+#define COMMENT '`'
+
 class jeffPreprocessor
 {
 public:

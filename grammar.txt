@@ -1,9 +1,33 @@
-Program -> DeclarationSection? + FunctionSection? + StatementSection
-DeclarationSection -> Declaration[]
-FunctionSection -> Function[]
-StatementSection -> Statement[]
-Declaration -> Type + Identifier + EOL
-Type -> Boolean | Integer | Float | Double | Character | String | Enum
-Integer -> SignedInteger | UnsignedInteger
-SignedInteger -> SINT8 | SINT16 | SINT32 | SINT64
-UnsignedInteger -> UINT8 | UINT16 | UINT32 | UINT64
+
+
+Start ::= Program EndFile
+Program ::= Statement[]
+
+Statement ::= SubStmt | SubDeclaration
+SubStmt ::= VarDeclarationStmt | AssignmentStmt | SubCallStmt
+AssignmentStmt ::= Identifier Assign Expression EOL
+SubCallStmt ::= Identifier Arguments EOL
+
+VarDeclarationStmt ::= SimpleVarDeclaration | AssignmentVarDeclaration
+SimpleVarDeclaration ::= BasicDeclaration EOL
+AssignmentVarDeclaration ::= BasicDeclaration SimpleAssign Expression EOL
+SubDeclaration ::= BasicDeclaration (ParameterList) {SubBody}
+BasicDeclaration ::= Type Identifier
+ParameterList ::= BasicDeclaration | BasicDeclaration, DeclarationList
+SubBody ::= SubStmt[]
+
+Expression ::= Operator Expression
+Expression ::= Expression BinOperator Expression
+Expression ::= (Expression)
+Expression ::= Literal | Identifier
+
+Operator ::= Plus | Minus | NOT | Dereference | Address
+BinOperator ::= Plus | Minus | Times | Divide | Exponent | Modulo | AND | OR | XOR | NAND | NOR | XNOR | Equals | NotEq | Less | Greater | LessEq | GreaterEq
+
+Type ::= bool | Integer | Float | char | string | enum
+Integer ::= SignedInteger | UnsignedInteger
+SignedInteger ::= sint8 | sint16 | sint32 | sint64
+UnsignedInteger ::= uint8 | uint16 | uint32 | uint64
+Float ::= float32 | float64
+
+Literal ::= BoolLiteral | IntLiteral | FloatLiteral | CharLiteral | StringLiteral

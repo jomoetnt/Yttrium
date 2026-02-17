@@ -15,39 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="jeffCompiler.cpp">
+    <ClCompile Include="Source\jeffCompiler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jeffLexer.cpp">
+    <ClCompile Include="Source\jeffLexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jeffIO.cpp">
+    <ClCompile Include="Source\jeffIO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jeffPreprocessor.cpp">
+    <ClCompile Include="Source\jeffPreprocessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jeffParser.cpp">
+    <ClCompile Include="Source\jeffParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jeffCodeGenerator.cpp">
+    <ClCompile Include="Source\jeffCodeGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="jeffLexer.h">
+    <ClInclude Include="Source\jeffLexer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="jeffIO.h">
+    <ClInclude Include="Source\jeffIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="jeffPreprocessor.h">
+    <ClInclude Include="Source\jeffPreprocessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="jeffParser.h">
+    <ClInclude Include="Source\jeffParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="jeffCodeGenerator.h">
+    <ClInclude Include="Source\jeffCodeGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
